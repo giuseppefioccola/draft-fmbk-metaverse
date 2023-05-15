@@ -151,7 +151,7 @@ Some initiatives are already dealing with related issues in IETF:
 
 * Network of Information defines an Information-Centric Networking (ICN) with named
   “information objects”, e.g. media contents, as the central concept as opposed to
-  a physical computer, or "node". 
+  a physical computer, or "node".
   In ICN approaches, the principal paradigm is not host-to-host communication as in
   the current Internet architecture ({{?RFC7927}}).
   The increasing demand for highly scalable and efficient distribution of content
