@@ -39,7 +39,7 @@ author:
     ins: P. Mendes
     name: Paulo Mendes
     org: Airbus
-	city: Taufkirchen
+    city: Taufkirchen
     code: 82024
     country: Germany
     email: paulo.mendes@airbus.com
@@ -47,17 +47,17 @@ author:
     ins: J. Burke
     name: Jeff Burke
     org: UCLA REMAP
-	street: 102 East Melnitz Hall
-	city: Los Angeles
-	code: CA  90095
-	country: USA
+    street: 102 East Melnitz Hall
+    city: Los Angeles
+    code: CA  90095
+    country: USA
     email: jburke@remap.ucla.edu
   -
     ins: D. Kutscher
     name: Dirk Kutscher
     org: HKUST(GZ)
-	city: Guangzhou
-	country: China
+    city: Guangzhou
+    country: China
     email: ietf@dkutscher.net
 
 
@@ -202,4 +202,3 @@ TBD
 # Acknowledgements
 
 TBD
-
