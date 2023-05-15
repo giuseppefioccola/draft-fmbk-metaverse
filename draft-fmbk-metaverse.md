@@ -6,8 +6,8 @@ date: {DATE}
 category: info
 
 ipr: trust200902
-# area: Transport
-# workgroup:
+area: Transport
+workgroup:
 keyword: Internet-Draft
 submissionType: IETF
 
@@ -199,5 +199,3 @@ This document makes no request of IANA.
 TBD
 
 # Acknowledgements
-
-TBD
