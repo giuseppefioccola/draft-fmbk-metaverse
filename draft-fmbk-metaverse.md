@@ -100,7 +100,6 @@ congestion, lossy transport protocols, and the ever growing size of video data,
 for instance:
  * {{MPTCP}} and {{MPQUIC}} are the expansions of {{TCP}} and {{QUIC}} in order to
  dispatch packets over multiple paths to maximize throughput.
- 
  * Adaptive Streaming approaches based on HTTP/2 aim to improve the viewport quality
  of immersive videos by refining the tiles delivery.
 
@@ -152,22 +151,22 @@ Some initiatives are already dealing with related issues in IETF:
 
 * Network of Information defines an Information-Centric Networking (ICN) with named
   “information objects”, e.g. media contents, as the central concept as opposed to
-  a physical computer, or “node”. 
+  a physical computer, or "node". 
   In ICN approaches, the principal paradigm is not host-to-host communication as in
   the current Internet architecture ({{?RFC7927}}).
   The increasing demand for highly scalable and efficient distribution of content
-  has motivatedbthe development of architectures that focus on information objects,
-  their properties, and receiverbinterest in the network to achieve efficient and
-  reliable distribution of such objects. 
+  has motivated the development of architectures that focus on information objects,
+  their properties, and receiver interest in the network to achieve efficient and
+  reliable distribution of such objects.
 
 * QuicR defines a Media Delivery Protocol over QUIC and its architecture
   {{?I-D.jennings-moq-quicr-arch}} uses similar concepts and delivery mechanisms to
-  those used by CDN and named objects. However there are fundamental 
+  those used by CDN and named objects. However there are fundamental
   characteristics that QuicR provides for ultra low latency delivery, by leveraging
   the characteristics of QUIC protocol.
 
 * Low Latency Low Loss Scalable throughput technology (L4S) can significantly reduce
-  lag in an interactive cloud-based video game ({{?I-D.ietf-tsvwg-l4s-arch}}). 
+  lag in an interactive cloud-based video game ({{?I-D.ietf-tsvwg-l4s-arch}}).
   L4S relies on ECN (Explicit Congestion Notification) in the IP header to indicate
   queue build-up in the radio access network to the application.
 
@@ -175,11 +174,11 @@ Some initiatives are already dealing with related issues in IETF:
   fine-granularity network service provisioning (traffic operations) within the
   network domain(s) that supports APN ({{?I-D.li-apn-framework}}). APN aims to use
   the ability to apply policies to traffic flows entering into the infrastructure
-  (APN domain). 
+  (APN domain).
   In modern networks, where things such as deterministic networking and networking
   slicing are required, there is a requirement for more functionality than QoS can
   provide.
-  
+
 * Glass to Glass Internet Ecosystem (GGIE) was presented few years ago and aimed to
   leverage IPv6 Glass to Glass. End to end Internet digital video ecosystem focusing
   on all phases of the video life cycle: Capture-Edit-Package-Distribute-Find-Watch.
