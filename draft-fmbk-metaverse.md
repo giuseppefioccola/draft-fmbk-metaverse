@@ -1,7 +1,7 @@
 ---
 title: Metaverse impacts on the Internet technologies
 abbrev: Metaverse
-docname: draft-fmbk-metaverse-00
+docname: draft-fmbk-metaverse-latest
 date: {DATE}
 category: info
 
