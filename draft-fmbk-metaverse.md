@@ -98,6 +98,7 @@ demands and high sensitivity to latency and dropped packets.
 There are elaborate solutions for dealing with bandwidth limitations, network
 congestion, lossy transport protocols, and the ever growing size of video data,
 for instance:
+
 * {{MPTCP}} and {{MPQUIC}} are the expansions of {{TCP}} and {{QUIC}} in order to
   dispatch packets over multiple paths to maximize throughput.
 * Adaptive Streaming approaches based on HTTP/2 aim to improve the viewport quality
@@ -115,11 +116,12 @@ such as information display, image processing, fast computing and networking.
 Some of the requirements are:
 
 * Low latency and High-Speed transport to reach services in one-hop and for real-time
-user interactions
+  user interactions
 * Intelligent control and SLA real-time monitoring to convey the traffic and manage
-network resources and source/route reselection
+  network resources and source/route reselection
 * Decentralization and Edge Services by positioning the data close to the user
-* Reducing data sizes through resolution changes, compression, and more efficient encodings
+* Reducing data sizes through resolution changes, compression, and more efficient
+  encodings
 
 
 # Gap Analysis
