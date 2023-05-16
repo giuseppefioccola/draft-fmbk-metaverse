@@ -93,11 +93,15 @@ Table of Contents
    high sensitivity to latency and dropped packets.  There are elaborate
    solutions for dealing with bandwidth limitations, network congestion,
    lossy transport protocols, and the ever growing size of video data,
-   for instance: * [MPTCP] and [MPQUIC] are the expansions of [TCP] and
-   [QUIC] in order to dispatch packets over multiple paths to maximize
-   throughput. * Adaptive Streaming approaches based on HTTP/2 aim to
-   improve the viewport quality of immersive videos by refining the
-   tiles delivery.
+   for instance:
+
+   *  [MPTCP] and [MPQUIC] are the expansions of [TCP] and [QUIC] in
+      order to dispatch packets over multiple paths to maximize
+      throughput.
+
+   *  Adaptive Streaming approaches based on HTTP/2 aim to improve the
+      viewport quality of immersive videos by refining the tiles
+      delivery.
 
    But these solutions have limitations when we consider their
    application to the Metaverse virtual space.
