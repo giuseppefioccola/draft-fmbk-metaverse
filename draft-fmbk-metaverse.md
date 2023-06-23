@@ -64,48 +64,42 @@ author:
 normative:
 
 informative:
-  TCP: RFC9293
-  QUIC: RFC9000
-  MPTCP: RFC8684
-  MPQUIC: I-D.ietf-quic-multipath
-
 
 --- abstract
 
 This document aims to explore the new challenges for the transport network
 brought by the development of Metaverse.
-It will also cover requirements, gap analysis and solutions.
+It discusses the Metaverse as an Information-Centric Network (ICN).
 
 --- middle
 
 # Introduction
 
-Metaverse introduces the concept of a persistent virtual space of everyday life
-as platform-agnostic digital space. It is an interconnected and limitless virtual
-world populated by an extension of physical identities, a digital twin of the
-physical world.
+The Web today essentially represents a data-centric application layer:
+data named by URLs is manipulated with Representational State Transfer (REST)
+primitives. However, the semantic gap with the underlying host-oriented
+transport is significant.
 
-Metaverse can be defined as the 3D generation of the Internet accessible via
+The interest in “the Metaverse” suggests that the end-user experience
+of the Web will evolve towards an always-on eXtended Reality (XR).
+Metaverse introduces the concept of a persistent virtual space of
+everyday life as platform-agnostic digital space. It is an interconnected
+and limitless virtual world populated by an extension of physical identities,
+a digital twin of the physical world.
+Metaverse can be seen as the 3D generation of the Internet accessible via
 new non-intrusive interfaces (e.g. holographics) and making use of new types
 of information (e.g. haptic, temperature, smell, emotions, digital transactions)
 that can be exchanged between people, simulated users, and cyber-physical
 systems, while preserving data privacy.
 
-Virtual Reality (VR) and Augmented Reality (AR) technologies have enormous
-potential in many different fields.
-Cloud based AR/VR are evolving since AR/VR applications combine high bandwidth
-demands and high sensitivity to latency and dropped packets.
-There are elaborate solutions for dealing with bandwidth limitations, network
-congestion, lossy transport protocols, and the ever growing size of video data,
-for instance:
+For this reason, the Metaverse should be considered not as an application
+of the current network, but an evolution of the network itself,
+reducing rather than widening the gap between network architecture
+and application semantics.
 
-* {{MPTCP}} and {{MPQUIC}} are the expansions of {{TCP}} and {{QUIC}} in order to
-  dispatch packets over multiple paths to maximize throughput.
-* Adaptive Streaming approaches based on HTTP/2 aim to improve the viewport quality
-  of immersive videos by refining the tiles delivery.
-
-But these solutions have limitations when we consider their application to the
-Metaverse virtual space.
+The ICN architecture is discussed in this document since it allows to achieve
+the integration of application and network layers with less overhead, low latency,
+better security, and more disruption tolerance suitable to diverse uses cases.
 
 # Requirements
 
@@ -126,67 +120,86 @@ Some of the requirements are:
 
 # Gap Analysis
 
-Dynamic Adaptive Streaming over HTTP (DASH) is an adaptive bitrate streaming
-technique that enables high quality streaming of media content over HTTP.
-Typically, the DASH client adaptively requests small chunks of media based on
-the available bandwidth and other resources. This client-pull technology has
-proven to be more flexible, firewall-friendly, and CDN scalable than server-push
-technologies. However, there is less control given the decentralized and
-client-driven nature of DASH, which introduces new challenges for them to offer
-a consistent and possibly higher quality of service for the new Metaverse
-experience.
+There are elaborate solutions for dealing with bandwidth limitations, network congestion,
+lossy transport protocols, and the ever growing size of video data, to address
+the above requirements, for instance:
 
-The Metaverse immersive space require intensive computational resources to render
-and display the video frames in a short motion-to-photon time so that people can
-obtain a real-time experience.
-VR and AR on the Edge Cloud is becoming a promising technique, which enables
-users to play high quality VR games without equipping high end gaming PCs.
+* MPTCP{{RFC8684?}} and MPQUIC{{I-D.ietf-quic-multipath?}} are the expansions of
+  TCP{{RFC9293?}} and QUIC{{RFC9000?}} in order to dispatch packets over multiple paths
+  to maximize throughput.
 
-With Metaverse, it is expected that a big amount of data can be exchanged between
-autonomous networks over untrusted channels. To ensure security, privacy, and
-trust among stakeholders, Blockchain can be employed to allow intelligent resource
-management, user access control, audibility, and chronology in stored transactions.
+* Dynamic Adaptive Streaming over HTTP (DASH) aim to improve the viewport quality
+  of immersive videos by refining the tiles delivery. But client-driven nature of DASH
+  introduces less control on the server side.
 
-# Solutions
-
-Some initiatives are already dealing with related issues in IETF:
-
-* Network of Information defines an Information-Centric Networking (ICN) with named
-  “information objects”, e.g. media contents, as the central concept as opposed to
-  a physical computer, or "node".
-  In ICN approaches, the principal paradigm is not host-to-host communication as in
-  the current Internet architecture ({{?RFC7927}}).
-  The increasing demand for highly scalable and efficient distribution of content
-  has motivated the development of architectures that focus on information objects,
-  their properties, and receiver interest in the network to achieve efficient and
-  reliable distribution of such objects.
-
-* QuicR defines a Media Delivery Protocol over QUIC and its architecture
-  {{?I-D.jennings-moq-quicr-arch}} uses similar concepts and delivery mechanisms to
-  those used by CDN and named objects. However there are fundamental
-  characteristics that QuicR provides for ultra low latency delivery, by leveraging
-  the characteristics of QUIC protocol.
-
-* Low Latency Low Loss Scalable throughput technology (L4S) can significantly reduce
-  lag in an interactive cloud-based video game ({{?I-D.ietf-tsvwg-l4s-arch}}).
-  L4S relies on ECN (Explicit Congestion Notification) in the IP header to indicate
-  queue build-up in the radio access network to the application.
+* Media over QUIC (MoQ) ({{?I-D.ietf-moq-requirements}}) and extensions such as QuicR
+  ({{?I-D.jennings-moq-proto}}) use similar concepts and delivery mechanisms to those
+  used by CDN and named objects.
+  There are fundamental characteristics that QuicR provides for ultra low latency delivery,
+  by leveraging the characteristics of QUIC protocol.
 
 * The APplication-aware Networking (APN) aims to develop a framework to enable
   fine-granularity network service provisioning (traffic operations) within the
   network domain(s) that supports APN ({{?I-D.li-apn-framework}}). APN aims to use
-  the ability to apply policies to traffic flows entering into the infrastructure
-  (APN domain).
+  the ability to apply policies to traffic flows entering into the infrastructure.
   In modern networks, where things such as deterministic networking and networking
   slicing are required, there is a requirement for more functionality than QoS can
   provide.
 
-* Glass to Glass Internet Ecosystem (GGIE) was presented few years ago and aimed to
-  leverage IPv6 Glass to Glass. End to end Internet digital video ecosystem focusing
-  on all phases of the video life cycle: Capture-Edit-Package-Distribute-Find-Watch.
-  The network is assumed to be IPv6-only. More details can be found in
-  {{?I-D.deen-daigle-ggie}}.
+But these solutions have limitations when we consider the Metaverse virtual space.
+In all of these approaches, the Metaverse is considered as an overlay application
+with corresponding infrastructure dependencies, but this increases the current gaps
+(and resulting costs and technical complexity) between distributed applications and
+the underlying network architecture.
 
+It would be better to assume information-centric system where most applications
+participate in granular 3D content exchange, context-aware integration with
+the physical world, and other Metaverse-relevant services.
+“The Metaverse” is an information-centric concept that will become synonymous
+with the network itself.
+
+The Information-Centric Networking (ICN) introduces named “information objects”,
+e.g. media contents, as the central concept as opposed to a physical computer, or "node".
+In ICN approaches, the principal paradigm is not host-to-host communication as in
+the current Internet architecture ({{?RFC7927}}).
+The increasing demand for highly scalable and efficient distribution of content
+has motivated the development of architectures that focus on information objects,
+their properties, and receiver interest in the network to achieve efficient and
+reliable distribution of such objects.
+
+# ICN technical challenges
+
+Many applications already work with data-oriented paradigms.
+Mapping them to a host-centric network model creates complexities
+and robustness issues, which can be addressed with a native ICN approach.
+
+The overlay approach to deal with real-time interactive media adds significant
+complexity. It is needed a fine-grained, hierarchical media exchange for low-latency
+interactive communication that enables scalable multi-destination distribution,
+and in-network replication and transformation that exposes object hierarchy for
+fine grained access and security.
+
+Since the Metaverse is an extension of the Web into immersive XR modalities
+that are often aligned with physical space, leveraging ICN concepts provides
+support for decentralized publishing, content interoperability and co-existence,
+based on general building blocks and not within separated application silos as
+today’s initial prototypes.
+
+There are four ICN capabilities critical to Metaverse concepts:
+
+* scalable and robust multi-destination communication, overcoming
+  IP multicast challenges such as inter-domain routing,
+  scalability, and routing communication overhead;
+
+* leveraging wireless broadcast to support shared local views
+  and low-latency interactivity;
+
+* privacy, selective attention, content filtering,
+  and autonomous interactions, as well as ownership and
+  control on the publishing side;
+
+* supporting in-network processing for objects replication
+  and transformation.
 
 # Security Considerations
 
