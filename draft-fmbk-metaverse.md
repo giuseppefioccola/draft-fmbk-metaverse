@@ -124,8 +124,8 @@ There are elaborate solutions for dealing with bandwidth limitations, network co
 lossy transport protocols, and the ever growing size of video data, to address
 the above requirements, for instance:
 
-* MPTCP{{RFC8684?}} and MPQUIC{{I-D.ietf-quic-multipath?}} are the expansions of
-  TCP{{RFC9293?}} and QUIC{{RFC9000?}} in order to dispatch packets over multiple paths
+* MPTCP{{?RFC8684}} and MPQUIC{{?I-D.ietf-quic-multipath}} are the expansions of
+  TCP{{?RFC9293}} and QUIC{{?RFC9000}} in order to dispatch packets over multiple paths
   to maximize throughput.
 
 * Dynamic Adaptive Streaming over HTTP (DASH) aim to improve the viewport quality
