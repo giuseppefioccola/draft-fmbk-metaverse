@@ -2,16 +2,16 @@
 
 This is the working area for the individual Internet-Draft, "Metaverse impacts on the Internet technologies".
 
-* [Editor's Copy](https://giuseppefioccola.github.io/draft-fmbk-metaverse/#go.draft-fmbk-metaverse.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-fmbk-metaverse)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-fmbk-metaverse)
-* [Compare Editor's Copy to Individual Draft](https://giuseppefioccola.github.io/draft-fmbk-metaverse/#go.draft-fmbk-metaverse.diff)
+* [Editor's Copy](https://giuseppefioccola.github.io/draft-fmbk-icnrg-metaverse/#go.draft-fmbk-icnrg-metaverse.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-fmbk-icnrg-metaverse)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-fmbk-icnrg-metaverse)
+* [Compare Editor's Copy to Individual Draft](https://giuseppefioccola.github.io/draft-fmbk-icnrg-metaverse/#go.draft-fmbk-icnrg-metaverse.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/giuseppefioccola/draft-fmbk-metaverse/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/giuseppefioccola/draft-fmbk-icnrg-metaverse/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
