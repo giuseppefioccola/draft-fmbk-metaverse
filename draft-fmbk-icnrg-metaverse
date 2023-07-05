@@ -1,7 +1,7 @@
 ---
 title: Metaverse impacts on the Internet technologies
 abbrev: Metaverse
-docname: draft-fmbk-metaverse-latest
+docname: draft-fmbk-icnrg-metaverse-latest
 date: {DATE}
 category: info
 
@@ -65,6 +65,10 @@ normative:
 
 informative:
 
+  IEEE-P2874:
+     target: https://standards.ieee.org/ieee/2874/10375/
+     title: IEEE SA P2874 Standard for Spatial Web Protocol, Architecture and Governance
+
 --- abstract
 
 This document aims to explore the new challenges for the transport network
@@ -92,6 +96,13 @@ of information (e.g. haptic, temperature, smell, emotions, digital transactions)
 that can be exchanged between people, simulated users, and cyber-physical
 systems, while preserving data privacy.
 
+Metaverse can also be seen as the next generation of Internet, that can be built
+based on Web 3.0. The Web 3.0 is an idea for a new iteration of the World Wide Web
+which incorporates concepts such as decentralization, trustworthy interactions,
+peer-to-peer, data distribution, decentralized identifiers. This is something
+more and different from the vision of Metaverse as full Virtual Reality (VR) and
+Augmented Reality (AR).
+
 For this reason, the Metaverse should be considered not as an application
 of the current network, but an evolution of the network itself,
 reducing rather than widening the gap between network architecture
@@ -105,7 +116,7 @@ better security, and more disruption tolerance suitable to diverse uses cases.
 
 {{?I-D.han-iccrg-arvr-transport-problem}} started to analyze the requirements of
 VR and AR to networking, especially to transport protocol.
-As emerging technology, VR and AR bring up a lot of challenges to technologies
+As emerging technology, the Metaverse brings up a lot of challenges to technologies
 such as information display, image processing, fast computing and networking.
 Some of the requirements are:
 
@@ -120,9 +131,20 @@ Some of the requirements are:
 
 # Gap Analysis
 
-There are elaborate solutions for dealing with bandwidth limitations, network congestion,
-lossy transport protocols, and the ever growing size of video data, to address
-the above requirements, for instance:
+It is known that HTML and HTTP are used to locate a web address, but they do not
+provide a sufficient technological foundation for the disparate technologies of
+the Web 3.0. In this regard, the HyperSpace Transaction Protocol (HSTP), as
+described by {{IEEE-P2874}}, is an evolution of HTTP to connect Metaverse spaces,
+including all data and entities (e.g. physical people, cities, buildings, objects,
+and their digital twins). It should be able to enable a fully augmented experience,
+bridging Web 3.0 technologies, artificial intelligence, blended realities (digital
+and physical), and distributed ledger technologies. Similarly for HTML, it would
+evolve in the direction of something like HyperSpace Modeling Language (HSML).
+
+Looking at the transport and network layer, there are the same gaps which needs to
+be overcame too. There are elaborate solutions for dealing with bandwidth limitations,
+network congestion, lossy transport protocols, and the ever growing size of video data,
+to address the above requirements, for instance:
 
 * MPTCP{{?RFC8684}} and MPQUIC{{?I-D.ietf-quic-multipath}} are the expansions of
   TCP{{?RFC9293}} and QUIC{{?RFC9000}} in order to dispatch packets over multiple paths
@@ -146,32 +168,44 @@ the above requirements, for instance:
   slicing are required, there is a requirement for more functionality than QoS can
   provide.
 
-But these solutions have limitations when we consider the Metaverse virtual space.
+* The Computing-Aware Traffic Steering (CATS) aims to analyze the problem on the
+  edge node, which makes a decision based on the metrics of interest, and then
+  steers the traffic to a node that serves a service instance. Indeed, for some
+  services (e.g. AR/VR), the performance experienced by the end users depends on
+  both network metrics such as bandwidth and latency, and compute metrics such as
+  processing, storage capabilities, and capacity.
+
 In all of these approaches, the Metaverse is considered as an overlay application
 with corresponding infrastructure dependencies, but this increases the current gaps
 (and resulting costs and technical complexity) between distributed applications and
 the underlying network architecture.
 
-It would be better to assume information-centric system where most applications
-participate in granular 3D content exchange, context-aware integration with
-the physical world, and other Metaverse-relevant services.
-“The Metaverse” is an information-centric concept that will become synonymous
-with the network itself.
+Additionally, it is important to understand which networking technology can be aligned
+with HSTP {{IEEE-P2874}}. Given that the current Internet stack is host driven, it is
+misaligned with the application layer that is data driven.
 
-The Information-Centric Networking (ICN) introduces named “information objects”,
-e.g. media contents, as the central concept as opposed to a physical computer, or "node".
-In ICN approaches, the principal paradigm is not host-to-host communication as in
-the current Internet architecture ({{?RFC7927}}).
+# Solution with an ICN approach
+
+The Information-Centric Networking (ICN) introduces named information objects,
+e.g. media contents, as the central concept as opposed to a physical computer,
+or node. In ICN approaches, the principal paradigm is not host-to-host
+communication as in the current Internet architecture ({{?RFC7927}}).
 The increasing demand for highly scalable and efficient distribution of content
 has motivated the development of architectures that focus on information objects,
 their properties, and receiver interest in the network to achieve efficient and
 reliable distribution of such objects.
 
-# ICN technical challenges
+Therefore, for the Metaverse, it would be better to assume information-centric system
+where most applications participate in granular 3D content exchange, context-aware
+integration with the physical world, and other Metaverse-relevant services.
+The assumption is that the Metaverse is an information-centric concept that will become
+synonymous with the network itself.
 
-Many applications already work with data-oriented paradigms.
-Mapping them to a host-centric network model creates complexities
-and robustness issues, which can be addressed with a native ICN approach.
+## Technical challenges
+
+Many applications already work with data-oriented paradigms. Mapping them to a
+host-centric network model creates complexities and robustness issues, which can
+be addressed with an ICN oriented approach.
 
 The overlay approach to deal with real-time interactive media adds significant
 complexity. It is needed a fine-grained, hierarchical media exchange for low-latency
@@ -200,6 +234,11 @@ There are four ICN capabilities critical to Metaverse concepts:
 
 * supporting in-network processing for objects replication
   and transformation.
+
+In addition, the interoperability aspects also need to be investigated,
+and, for example, Hybrid Information-Centric Networking (hICN), which
+implements information-networking functionalities into IPv6
+({{?I-D.muscariello-intarea-hicn}}, can provide a solution.
 
 # Security Considerations
 
