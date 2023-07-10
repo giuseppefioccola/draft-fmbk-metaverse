@@ -1,5 +1,5 @@
 ---
-title: Metaverse impacts on the Internet technologies
+title: Metaverse Networking
 abbrev: Metaverse
 docname: draft-fmbk-icnrg-metaverse-latest
 date: {DATE}
@@ -69,6 +69,8 @@ informative:
      target: https://standards.ieee.org/ieee/2874/10375/
      title: IEEE SA P2874 Standard for Spatial Web Protocol, Architecture and Governance
 
+  socialAR-measurements: DOI.10.1145/3517745.3561417
+
 --- abstract
 
 This document aims to explore the new challenges for the transport network
@@ -79,38 +81,83 @@ It discusses the Metaverse as an Information-Centric Network (ICN).
 
 # Introduction
 
-The Web today essentially represents a data-centric application layer:
-data named by URLs is manipulated with Representational State Transfer (REST)
-primitives. However, the semantic gap with the underlying host-oriented
-transport is significant.
+"Metaverse" is a place-holder for a range of new technologies and
+experiences that is not particularly well-defined, but some working
+definitions include the notion of shared, interoperable, and
+persistent eXtended Reality (XR). Whereas initial prototypes and
+blueprints suggest leveraging or extending existing Internet and Web
+protocols, we can already identify gaps with respect to performance
+and scalability, for example as reported by {{socialAR-measurements}}.
 
-The interest in “the Metaverse” suggests that the end-user experience
-of the Web will evolve towards an always-on eXtended Reality (XR).
-Metaverse introduces the concept of a persistent virtual space of
-everyday life as platform-agnostic digital space. It is an interconnected
-and limitless virtual world populated by an extension of physical identities,
-a digital twin of the physical world.
-Metaverse can be seen as the 3D generation of the Internet accessible via
-new non-intrusive interfaces (e.g. holographics) and making use of new types
-of information (e.g. haptic, temperature, smell, emotions, digital transactions)
-that can be exchanged between people, simulated users, and cyber-physical
-systems, while preserving data privacy.
+Some of the observed performance problems seem to stem from
+fundamental gaps in today's Internet and Web technologies, for
+example, the lack of scalable and robust multi-destination
+communication and the lack of leveraging computing in the network with
+the required level of flexibility and trustworthiness to provide
+offloading services and to enable the ultra-low latencies that some
+Metaverse applications claim to require.
 
-Metaverse can also be seen as the next generation of Internet, that can be built
-based on Web 3.0. The Web 3.0 is an idea for a new iteration of the World Wide Web
-which incorporates concepts such as decentralization, trustworthy interactions,
-peer-to-peer, data distribution, decentralized identifiers. This is something
-more and different from the vision of Metaverse as full Virtual Reality (VR) and
-Augmented Reality (AR).
+Different remedies are being proposed, e.g., providing more (costly)
+deterministic communication services through resource reservation and
+scheduling on the Internet, requiring/enabling the network to
+understand application requirements and to provide corresponding QoS,
+extended overlay infrastructure for reducing latencies for CDN-like
+distribution etc.
 
-For this reason, the Metaverse should be considered not as an application
-of the current network, but an evolution of the network itself,
-reducing rather than widening the gap between network architecture
-and application semantics.
+Alternatively, one might also take a more principled approach and do
+not take current design and deployment models as a given, but rather
+take Metaverse as a first candidate proposal for a future web
+infrastructure that enables fine-granular 3D content exchange, rich
+interaction between physical and virtual infrastructure, access to
+static data and dynamic computation results for individual users as
+well as for large user groups without the limitations of today's
+platform- and overlay-based system -- i.e., conceive the Metaverse and
+the future web as a fundamentally information-centric system.
 
-The ICN architecture is discussed in this document since it allows to achieve
-the integration of application and network layers with less overhead, low latency,
-better security, and more disruption tolerance suitable to diverse uses cases.
+This Internet draft addresses three aspects:
+
+1. the documentation of requirements and observed gaps with the current technology stack;
+2. a discussion of the applicability of different networking and
+   distributed computing technologies; and
+3. an initial discussion of a more fundamental and comprehensive
+   re-design of a future web that provides useful services for
+   Metaverse systems and beyond.
+
+
+
+
+<!-- The Web today essentially represents a data-centric application layer: -->
+<!-- data named by URLs is manipulated with Representational State Transfer (REST) -->
+<!-- primitives. However, the semantic gap with the underlying host-oriented -->
+<!-- transport is significant. -->
+
+<!-- The interest in “the Metaverse” suggests that the end-user experience -->
+<!-- of the Web will evolve towards an always-on eXtended Reality (XR). -->
+<!-- Metaverse introduces the concept of a persistent virtual space of -->
+<!-- everyday life as platform-agnostic digital space. It is an interconnected -->
+<!-- and limitless virtual world populated by an extension of physical identities, -->
+<!-- a digital twin of the physical world. -->
+<!-- Metaverse can be seen as the 3D generation of the Internet accessible via -->
+<!-- new non-intrusive interfaces (e.g. holographics) and making use of new types -->
+<!-- of information (e.g. haptic, temperature, smell, emotions, digital transactions) -->
+<!-- that can be exchanged between people, simulated users, and cyber-physical -->
+<!-- systems, while preserving data privacy. -->
+
+<!-- Metaverse can also be seen as the next generation of Internet, that can be built -->
+<!-- based on Web 3.0. The Web 3.0 is an idea for a new iteration of the World Wide Web -->
+<!-- which incorporates concepts such as decentralization, trustworthy interactions, -->
+<!-- peer-to-peer, data distribution, decentralized identifiers. This is something -->
+<!-- more and different from the vision of Metaverse as full Virtual Reality (VR) and -->
+<!-- Augmented Reality (AR). -->
+
+<!-- For this reason, the Metaverse should be considered not as an application -->
+<!-- of the current network, but an evolution of the network itself, -->
+<!-- reducing rather than widening the gap between network architecture -->
+<!-- and application semantics. -->
+
+<!-- The ICN architecture is discussed in this document since it allows to achieve -->
+<!-- the integration of application and network layers with less overhead, low latency, -->
+<!-- better security, and more disruption tolerance suitable to diverse uses cases. -->
 
 # Requirements
 
