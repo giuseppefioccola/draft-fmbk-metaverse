@@ -159,81 +159,134 @@ This Internet draft addresses three aspects:
 <!-- the integration of application and network layers with less overhead, low latency, -->
 <!-- better security, and more disruption tolerance suitable to diverse uses cases. -->
 
-# Requirements
+# Requirements and Gaps
 
-{{?I-D.han-iccrg-arvr-transport-problem}} started to analyze the requirements of
-VR and AR to networking, especially to transport protocol.
-As emerging technology, the Metaverse brings up a lot of challenges to technologies
-such as information display, image processing, fast computing and networking.
+{{?I-D.han-iccrg-arvr-transport-problem}} started to analyze the
+requirements of VR and AR to networking from a transport protocol
+perspective.
+<!-- As an emerging technology, the Metaverse brings up a lot -->
+<!-- of challenges to technologies such as information display, image -->
+<!-- processing, fast computing and networking. -->
 Some of the requirements are:
 
-* Low latency and High-Speed transport to reach services in one-hop and for real-time
-  user interactions
-* Intelligent control and SLA real-time monitoring to convey the traffic and manage
-  network resources and source/route reselection
-* Decentralization and Edge Services by positioning the data close to the user
-* Reducing data sizes through resolution changes, compression, and more efficient
-  encodings
+* low latency and High-Speed transport to reach services in one-hop
+  and for real-time user interactions;
+* intelligent control and SLA real-time monitoring to convey the traffic and manage
+  network resources and source/route re-selection;
+* decentralization and Edge Services by positioning the data close to the user; and
+* reducing data sizes through resolution changes, compression, and
+  more efficient encodings.
 
 
-# Gap Analysis
+{{socialAR-measurements}} performed measurements with five popular
+social VR platforms. The experimental results revealed that all these
+platforms face fundamental technical challenges considering the claims
+that often associated with the Metaverse. One issue was poor
+scalability with respect to the number of users in one session:
+throughput, end-to-end latency, and on-device computation resource
+utilization increase almost linearly with the number of users. Other
+issues include noticeable load and reduced achievable video rendering
+frame rates and considerable network utilization even with smaller
+numbers of users.
 
-It is known that HTML and HTTP are used to locate a web address, but they do not
-provide a sufficient technological foundation for the disparate technologies of
-the Web 3.0. In this regard, the HyperSpace Transaction Protocol (HSTP), as
-described by {{IEEE-P2874}}, is an evolution of HTTP to connect Metaverse spaces,
-including all data and entities (e.g. physical people, cities, buildings, objects,
-and their digital twins). It should be able to enable a fully augmented experience,
-bridging Web 3.0 technologies, artificial intelligence, blended realities (digital
-and physical), and distributed ledger technologies. Similarly, HTML would evolve
-in the direction of something like HyperSpace Modeling Language (HSML).
+# Current and Emerging  Mainstream Approaches
 
-Looking at the transport and network layer, there are the same gaps which needs to
-be overcame too. There are elaborate solutions for dealing with bandwidth limitations,
-network congestion, lossy transport protocols, and the ever growing size of video data,
-to address the above requirements, for instance:
+Different IETF technologies have been proposed to address some of the
+above-mentioned issues and to provider a better service for Metaverse
+applications. In the following, we list a few of them and will discuss
+them in more detail in a future version of this Internet Draft. For
+example, on the network and transport layer, there are elaborate
+solutions for dealing with bandwidth limitations, network congestion,
+lossy transport protocols, and the ever growing size of video data, to
+address the above requirements, for instance:
 
-* MPTCP{{?RFC8684}} and MPQUIC{{?I-D.ietf-quic-multipath}} are the expansions of
-  TCP{{?RFC9293}} and QUIC{{?RFC9000}} in order to dispatch packets over multiple paths
-  to maximize throughput.
+* MPTCP{{?RFC8684}} and MPQUIC{{?I-D.ietf-quic-multipath}} are the
+  expansions of TCP{{?RFC9293}} and QUIC{{?RFC9000}} in order to
+  dispatch packets over multiple paths to maximize throughput.
 
-* Dynamic Adaptive Streaming over HTTP (DASH) aim to improve the viewport quality
-  of immersive videos by refining the tiles delivery. But client-driven nature of DASH
-  introduces less control on the server side.
+* Dynamic Adaptive Streaming over HTTP (DASH) aim to improve the
+  viewport quality of immersive videos by refining the tiles
+  delivery. But client-driven nature of DASH introduces less control
+  on the server side.
 
-* Media over QUIC (MoQ) ({{?I-D.ietf-moq-requirements}}) and extensions such as QuicR
-  ({{?I-D.jennings-moq-proto}}) use similar concepts and delivery mechanisms to those
-  used by CDN and named objects.
-  There are fundamental characteristics that QuicR provides for ultra low latency delivery,
-  by leveraging the characteristics of QUIC protocol.
+* Media over QUIC (MoQ) ({{?I-D.ietf-moq-requirements}}) and
+  extensions such as QuicR ({{?I-D.jennings-moq-proto}}) use similar
+  concepts and delivery mechanisms to those used by CDN and named
+  objects.  There are fundamental characteristics that QuicR provides
+  for ultra low latency delivery, by leveraging the characteristics of
+  QUIC protocol.
 
-* The APplication-aware Networking (APN) aims to develop a framework to enable
-  fine-granularity network service provisioning (traffic operations) within the
-  network domain(s) that supports APN ({{?I-D.li-apn-framework}}). APN aims to use
-  the ability to apply policies to traffic flows entering into the infrastructure.
-  In modern networks, where things such as deterministic networking and networking
-  slicing are required, there is a requirement for more functionality than QoS can
-  provide.
+* The APplication-aware Networking (APN) aims to develop a framework
+  to enable fine-granularity network service provisioning (traffic
+  operations) within the network domain(s) that supports APN
+  ({{?I-D.li-apn-framework}}). APN aims to use the ability to apply
+  policies to traffic flows entering into the infrastructure.  In
+  modern networks, where things such as deterministic networking and
+  networking slicing are required, there is a requirement for more
+  functionality than QoS can provide.
 
-* The Computing-Aware Traffic Steering (CATS) aims to analyze the problem on the
-  edge node, which makes a decision based on the metrics of interest, and then
-  steers the traffic to a node that serves a service instance. Indeed, for AR/VR
-  services, the performance experienced by the end users depends on both network
-  metrics such as bandwidth and latency, and compute metrics such as processing,
-  storage capabilities, and capacity.
+* The Computing-Aware Traffic Steering (CATS) aims to analyze the
+  problem on the edge node, which makes a decision based on the
+  metrics of interest, and then steers the traffic to a node that
+  serves a service instance. Indeed, for AR/VR services, the
+  performance experienced by the end users depends on both network
+  metrics such as bandwidth and latency, and compute metrics such as
+  processing, storage capabilities, and capacity.
 
-In all of these approaches, the Metaverse is considered as an overlay application
-with corresponding infrastructure dependencies, but this increases the current gaps
-(and resulting costs and technical complexity) between distributed applications and
-the underlying network architecture.
+In all of these approaches, the Metaverse is considered as an overlay
+application with corresponding infrastructure dependencies, but this
+potentially increases the current gaps (and resulting costs and
+technical complexity) between distributed applications and the
+underlying network architecture.
 
-Additionally, it is important to understand which networking technology can be aligned
-with HSTP {{IEEE-P2874}}. Given that the current Internet stack is host driven, it is
-misaligned with the application layer that is data driven.
+In the 3D hypermedia space, one proposal for a new "Spatial Web"
+Framework is the HyperSpace Transaction Protocol (HSTP), as described
+by {{IEEE-P2874}}, intended to "enable interoperable, semantically
+compatible connections between connected hardware (e.g. autonomous
+drones, sensors, smart devices, robots) and software (e.g. services,
+platforms, applications, artificial intelligence systems)". The
+specification, which is not accessible publically, is supposed to
+include
 
-# Solution with an ICN approach
+1. a spatial range query format and response
+language for requesting data about objects within a dimensional range
+(spatial, temperature, pressure, motion) and their content.
+2. a semantic data ontology schema for describing objects, relations,
+and actions in a standardized way
+3. a verifiable credentialing and certification method for
+permissioning create, retrieve, update, and delete (CRUD) access to
+devices, locations, users, and data; and
+4. a human and machine-readable contracting language that enables the
+expression and automated execution of legal, financial and physical
+activities.
 
-The Information-Centric Networking (ICN) introduces named information objects,
+We cannot review the technical specification, but the feature
+description seems to suggest an application layer protocol that would
+enable more expressiveness and functionality in the "web" (i.e.,
+application and presentation) layer, however based on the assumption
+of existing networking technology and overlay approaches.
+
+<!-- is an evolution of HTTP to connect Metaverse -->
+<!-- spaces, including all data and entities (e.g. physical people, cities, -->
+<!-- buildings, objects, and their digital twins). It should be able to -->
+<!-- enable a fully augmented experience, bridging Web 3.0 technologies, -->
+<!-- artificial intelligence, blended realities (digital and physical), and -->
+<!-- distributed ledger technologies. Similarly, HTML would evolve in the -->
+<!-- direction of something like HyperSpace Modeling Language (HSML). -->
+
+
+<!-- Additionally, it is important to understand which networking technology can be aligned -->
+<!-- with HSTP {{IEEE-P2874}}. Given that the current Internet stack is host driven, it is -->
+<!-- misaligned with the application layer that is data driven. -->
+
+# Information-Centric Metaverse
+
+Considering the gaps and perceived requirements from applications and
+proposed application layer protocols, we can reason about a holistic
+design that can address the afore-mentioned problems *and* provide a
+more useful foundations for future hypermedia communication.
+
+Information-Centric Networking (ICN) introduces named information objects,
 e.g. media contents, as the central concept as opposed to a physical computer,
 or node ({{?RFC7927}}). In ICN approaches, the principal paradigm is not
 host-to-host communication as in the current Internet architecture.
