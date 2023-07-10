@@ -138,8 +138,8 @@ described by {{IEEE-P2874}}, is an evolution of HTTP to connect Metaverse spaces
 including all data and entities (e.g. physical people, cities, buildings, objects,
 and their digital twins). It should be able to enable a fully augmented experience,
 bridging Web 3.0 technologies, artificial intelligence, blended realities (digital
-and physical), and distributed ledger technologies. Similarly for HTML, it would
-evolve in the direction of something like HyperSpace Modeling Language (HSML).
+and physical), and distributed ledger technologies. Similarly, HTML would evolve
+in the direction of something like HyperSpace Modeling Language (HSML).
 
 Looking at the transport and network layer, there are the same gaps which needs to
 be overcame too. There are elaborate solutions for dealing with bandwidth limitations,
@@ -170,10 +170,10 @@ to address the above requirements, for instance:
 
 * The Computing-Aware Traffic Steering (CATS) aims to analyze the problem on the
   edge node, which makes a decision based on the metrics of interest, and then
-  steers the traffic to a node that serves a service instance. Indeed, for some
-  services (e.g. AR/VR), the performance experienced by the end users depends on
-  both network metrics such as bandwidth and latency, and compute metrics such as
-  processing, storage capabilities, and capacity.
+  steers the traffic to a node that serves a service instance. Indeed, for AR/VR
+  services, the performance experienced by the end users depends on both network
+  metrics such as bandwidth and latency, and compute metrics such as processing,
+  storage capabilities, and capacity.
 
 In all of these approaches, the Metaverse is considered as an overlay application
 with corresponding infrastructure dependencies, but this increases the current gaps
@@ -188,8 +188,8 @@ misaligned with the application layer that is data driven.
 
 The Information-Centric Networking (ICN) introduces named information objects,
 e.g. media contents, as the central concept as opposed to a physical computer,
-or node. In ICN approaches, the principal paradigm is not host-to-host
-communication as in the current Internet architecture ({{?RFC7927}}).
+or node ({{?RFC7927}}). In ICN approaches, the principal paradigm is not
+host-to-host communication as in the current Internet architecture.
 The increasing demand for highly scalable and efficient distribution of content
 has motivated the development of architectures that focus on information objects,
 their properties, and receiver interest in the network to achieve efficient and
@@ -221,24 +221,26 @@ today’s initial prototypes.
 
 There are four ICN capabilities critical to Metaverse concepts:
 
-* scalable and robust multi-destination communication, overcoming
-  IP multicast challenges such as inter-domain routing,
-  scalability, and routing communication overhead;
+* scalable and robust multi-destination communication, overcoming IP multicast
+  challenges such as inter-domain routing, scalability, and routing communication
+  overhead;
 
-* leveraging wireless broadcast to support shared local views
-  and low-latency interactivity;
+* leveraging wireless broadcast to support shared local views and low-latency
+  interactivity;
 
-* privacy, selective attention, content filtering,
-  and autonomous interactions, as well as ownership and
-  control on the publishing side;
+* privacy, selective attention, content filtering, and autonomous interactions,
+  as well as ownership and control on the publishing side;
 
-* supporting in-network processing for objects replication
-  and transformation.
+* supporting in-network processing for objects replication and transformation.
 
 In addition, the interoperability aspects also need to be investigated,
 and, for example, Hybrid Information-Centric Networking (hICN), which
 implements information-networking functionalities into IPv6
 ({{?I-D.muscariello-intarea-hicn}}, can provide a solution.
+
+It would be theoretically possible to leverage the solutions mentioned in the
+previous section in order to reach the above ICN oriented capabilities. But a
+systemic approach would be highly desirable in the longer term.
 
 # Security Considerations
 
