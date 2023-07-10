@@ -69,7 +69,7 @@ informative:
      target: https://standards.ieee.org/ieee/2874/10375/
      title: IEEE SA P2874 Standard for Spatial Web Protocol, Architecture and Governance
 
-  socialAR-measurements: DOI.10.1145/3517745.3561417
+  socialVR-measurements: DOI.10.1145/3517745.3561417
 
 --- abstract
 
@@ -87,7 +87,7 @@ definitions include the notion of shared, interoperable, and
 persistent eXtended Reality (XR). Whereas initial prototypes and
 blueprints suggest leveraging or extending existing Internet and Web
 protocols, we can already identify gaps with respect to performance
-and scalability, for example as reported by {{socialAR-measurements}}.
+and scalability, for example as reported by {{socialVR-measurements}}.
 
 Some of the observed performance problems seem to stem from
 fundamental gaps in today's Internet and Web technologies, for
@@ -114,9 +114,10 @@ well as for large user groups without the limitations of today's
 platform- and overlay-based system -- i.e., conceive the Metaverse and
 the future web as a fundamentally information-centric system.
 
-This Internet draft addresses three aspects:
+This document addresses three aspects:
 
-1. the documentation of requirements and observed gaps with the current technology stack;
+1. the documentation of requirements and observed gaps with the current
+   technology stack;
 2. a discussion of the applicability of different networking and
    distributed computing technologies; and
 3. an initial discussion of a more fundamental and comprehensive
@@ -124,49 +125,11 @@ This Internet draft addresses three aspects:
    Metaverse systems and beyond.
 
 
-
-
-<!-- The Web today essentially represents a data-centric application layer: -->
-<!-- data named by URLs is manipulated with Representational State Transfer (REST) -->
-<!-- primitives. However, the semantic gap with the underlying host-oriented -->
-<!-- transport is significant. -->
-
-<!-- The interest in “the Metaverse” suggests that the end-user experience -->
-<!-- of the Web will evolve towards an always-on eXtended Reality (XR). -->
-<!-- Metaverse introduces the concept of a persistent virtual space of -->
-<!-- everyday life as platform-agnostic digital space. It is an interconnected -->
-<!-- and limitless virtual world populated by an extension of physical identities, -->
-<!-- a digital twin of the physical world. -->
-<!-- Metaverse can be seen as the 3D generation of the Internet accessible via -->
-<!-- new non-intrusive interfaces (e.g. holographics) and making use of new types -->
-<!-- of information (e.g. haptic, temperature, smell, emotions, digital transactions) -->
-<!-- that can be exchanged between people, simulated users, and cyber-physical -->
-<!-- systems, while preserving data privacy. -->
-
-<!-- Metaverse can also be seen as the next generation of Internet, that can be built -->
-<!-- based on Web 3.0. The Web 3.0 is an idea for a new iteration of the World Wide Web -->
-<!-- which incorporates concepts such as decentralization, trustworthy interactions, -->
-<!-- peer-to-peer, data distribution, decentralized identifiers. This is something -->
-<!-- more and different from the vision of Metaverse as full Virtual Reality (VR) and -->
-<!-- Augmented Reality (AR). -->
-
-<!-- For this reason, the Metaverse should be considered not as an application -->
-<!-- of the current network, but an evolution of the network itself, -->
-<!-- reducing rather than widening the gap between network architecture -->
-<!-- and application semantics. -->
-
-<!-- The ICN architecture is discussed in this document since it allows to achieve -->
-<!-- the integration of application and network layers with less overhead, low latency, -->
-<!-- better security, and more disruption tolerance suitable to diverse uses cases. -->
-
 # Requirements and Gaps
 
-{{?I-D.han-iccrg-arvr-transport-problem}} started to analyze the
-requirements of VR and AR to networking from a transport protocol
-perspective.
-<!-- As an emerging technology, the Metaverse brings up a lot -->
-<!-- of challenges to technologies such as information display, image -->
-<!-- processing, fast computing and networking. -->
+{{?I-D.han-iccrg-arvr-transport-problem}} started to analyze the requirements
+of Virtual Reality (VR) and Augmented Reality (AR) to networking from a
+transport protocol perspective.
 Some of the requirements are:
 
 * low latency and High-Speed transport to reach services in one-hop
@@ -177,11 +140,10 @@ Some of the requirements are:
 * reducing data sizes through resolution changes, compression, and
   more efficient encodings.
 
-
-{{socialAR-measurements}} performed measurements with five popular
+{{socialVR-measurements}} performed measurements with five popular
 social VR platforms. The experimental results revealed that all these
 platforms face fundamental technical challenges considering the claims
-that often associated with the Metaverse. One issue was poor
+that are often associated with the Metaverse. One issue was poor
 scalability with respect to the number of users in one session:
 throughput, end-to-end latency, and on-device computation resource
 utilization increase almost linearly with the number of users. Other
@@ -189,16 +151,16 @@ issues include noticeable load and reduced achievable video rendering
 frame rates and considerable network utilization even with smaller
 numbers of users.
 
-# Current and Emerging  Mainstream Approaches
+# Current and Emerging Mainstream Approaches
 
 Different IETF technologies have been proposed to address some of the
 above-mentioned issues and to provider a better service for Metaverse
 applications. In the following, we list a few of them and will discuss
-them in more detail in a future version of this Internet Draft. For
-example, on the network and transport layer, there are elaborate
-solutions for dealing with bandwidth limitations, network congestion,
-lossy transport protocols, and the ever growing size of video data, to
-address the above requirements, for instance:
+them in more detail in a future version of this document. For example,
+on the network and transport layer, there are elaborate solutions
+for dealing with bandwidth limitations, network congestion, lossy transport
+protocols, and the ever growing size of video data, to address
+the above requirements, for instance:
 
 * MPTCP{{?RFC8684}} and MPQUIC{{?I-D.ietf-quic-multipath}} are the
   expansions of TCP{{?RFC9293}} and QUIC{{?RFC9000}} in order to
@@ -266,19 +228,6 @@ enable more expressiveness and functionality in the "web" (i.e.,
 application and presentation) layer, however based on the assumption
 of existing networking technology and overlay approaches.
 
-<!-- is an evolution of HTTP to connect Metaverse -->
-<!-- spaces, including all data and entities (e.g. physical people, cities, -->
-<!-- buildings, objects, and their digital twins). It should be able to -->
-<!-- enable a fully augmented experience, bridging Web 3.0 technologies, -->
-<!-- artificial intelligence, blended realities (digital and physical), and -->
-<!-- distributed ledger technologies. Similarly, HTML would evolve in the -->
-<!-- direction of something like HyperSpace Modeling Language (HSML). -->
-
-
-<!-- Additionally, it is important to understand which networking technology can be aligned -->
-<!-- with HSTP {{IEEE-P2874}}. Given that the current Internet stack is host driven, it is -->
-<!-- misaligned with the application layer that is data driven. -->
-
 # Opportunities and Challenges for Information-Centric Metaverse
 
 Considering the gaps and perceived requirements from applications and
@@ -302,8 +251,6 @@ Metaverse-relevant services.  The assumption is that the Metaverse is
 an information-centric concept that will become synonymous with the
 network itself.
 
-<!-- ## Technical challenges -->
-
 Many applications already work with data-oriented paradigms. Mapping them to a
 host-centric network model creates complexities and robustness issues, which can
 be addressed with an ICN oriented approach.
@@ -320,21 +267,6 @@ support for decentralized publishing, content interoperability and co-existence,
 based on general building blocks and not within separated application silos as
 today’s initial prototypes.
 
-
-<!-- There are four ICN capabilities critical to Metaverse concepts: -->
-
-<!-- * scalable and robust multi-destination communication, overcoming IP multicast -->
-<!--   challenges such as inter-domain routing, scalability, and routing communication -->
-<!--   overhead; -->
-
-<!-- * leveraging wireless broadcast to support shared local views and low-latency -->
-<!--   interactivity; -->
-
-<!-- * privacy, selective attention, content filtering, and autonomous interactions, -->
-<!--   as well as ownership and control on the publishing side; -->
-
-<!-- * supporting in-network processing for objects replication and transformation. -->
-
 In the following, we discuss issues with today's technologies, ICN
 support that could be leveraged, and research opportunities for the
 ICN community for four topics:
@@ -350,8 +282,7 @@ ICN community for four topics:
 
 * Low-latency live streaming is not easy and not efficient in the Internet today. CDN-based DASH incurs high latencies.
 * Current trends: blending of real-time interactive (WebRTC with RTP)
-  and streaming (DASH), for example: Amazon Twitch, Meta Rush, IETF
-  Media-over-QUIC, Cisco QuicR
+  and streaming (DASH), for example: Amazon Twitch, Meta Rush, IETF Media-over-QUIC, QuicR
 * What is needed:
   * fine-granular media distribution that supports both interactive and streaming;
   * scalable multi-destination distribution, i.e., some kind of in-network replication;
@@ -363,8 +294,8 @@ ICN community for four topics:
 
 ICN is generally supporting most of these requirements:
 * multi-destination distribution can be achieved through automatic in-network
- replication and interest aggregation, further supported by
- opportunistic caching.
+  replication and interest aggregation, further supported by
+  opportunistic caching.
 * ICN provides a uniform interface for unicast and "multicast" (i.e.,
   there is no difference for consumers).
 * IP-Multicast issues (inter-domain, routing scalability) do not apply
@@ -373,8 +304,7 @@ ICN is generally supporting most of these requirements:
 * Receiver-driven operation conducive to supporting different quality
   levels, like in DASH today: receiver has all the knowledge directly
   (current performance) and can make timely decisions.
-* Consumer mobility is an efficient operation in ICN (a
-  non-operation).
+* Consumer mobility is an efficient operation in ICN (a non-operation).
 
 ### Research Opportunities
 
@@ -386,7 +316,8 @@ ICN is generally supporting most of these requirements:
   * fine-tuning with respect to interest aggregation, caching; and for
   * prioritizing "flows", e.g., audio over video.
 * Sender mobility has seen some proposals in research that need to be validated.
-* More experiments are needed with large-scale interactive multimedia communication and low-latency transport.
+* More experiments are needed with large-scale interactive multimedia communication
+  and low-latency transport.
 * Actual application development and deployment is needed to gradually
   develop best practices, software stacks, and re-usable application
   components.
@@ -408,15 +339,12 @@ complexities and robustness issues and would not result in good
 abstractions for systems.
 
 In Metaverse applications, data can potentially be shared efficiently
-– between nodes and within one node/process. Connection-based
+between nodes and within one node/process. Connection-based
 communication models make it hard/impossible to do so.
 
 Application layer data structures in VR (3D models, scene
 descriptions) are based on object hierarchies, connection-based
 systems may not be able to take advantage of it.
-
-<!-- (Dirk: to be checked, -->
-<!-- extended) -->
 
 ### ICN Support
 
@@ -430,7 +358,6 @@ less relevant. In addition ICN provides
 * data-sharing is generally supported, which has benefits beyond
   networking, e.g., zero-copy sharing in processes etc.
 
-
 ### Research Opportunities
 
 * Work should be started on the development of information-centric
@@ -443,13 +370,12 @@ less relevant. In addition ICN provides
   without giving up data immutability.
 * The relationship between application-layer data-oriented operation
   and network-layer needs to be explored further, e.g.,
-  * Would there be  any differences?
-  * Do we need to think about robust namespace mappings schemes?
+  * Would there be any differences?
+  * Would it be needed to think about robust namespace mappings schemes?
 * Concepts and mechanisms for privacy, selective attention, content
   filtering, and autonomous interactions, as well as ownership and
   control on the publishing side are needed.
 * In general more applications should be developed to enable more experiments.
-
 
 ## In-Network Computing
 
@@ -472,7 +398,6 @@ In-network computing can support Metaverse systems in different ways:
 * Dynamic, just-in-time, instantiation of computing function on
   application-agnostic platforms is not available.
 
-
 ### ICN Support
 
 * The named-data approach is generally useful for distributed computing (NFN,
@@ -487,7 +412,6 @@ In-network computing can support Metaverse systems in different ways:
   REST) should be further developed and tested.
 * Specific approaches such as in-network media transcoding should be developed.
 * In general, more experiments for different types of applications are needed.
-
 
 ## Interoperability with existing infrastructure
 
